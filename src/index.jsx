@@ -1,18 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { DatePicker } from 'antd';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
+import { Provider } from 'react-redux';
 import 'normalize.css';
-
-moment.locale('zh-cn');
+import store from './store';
+import Routes from './routes';
 
 function Index() {
     return (
-      <div className="container">
-        <h1>Antd DatePicker!</h1>
-        <DatePicker defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} />
-      </div>
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     );
 }
 
