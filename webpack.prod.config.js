@@ -9,7 +9,7 @@ const SRC_PATH = path.resolve(ROOT_PATH, 'src');
 const prodConfig = merge(baseConfig, {
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.API_ENV': '"production"'
+            'process.env.NODE_ENV': '"production"'
         }),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,

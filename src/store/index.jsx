@@ -1,10 +1,9 @@
-import { createStore, compose } from 'redux';
-import rootReducers from '../reducers';
+import devConfigureStore from './configureStore.dev';
+import prodConfigureStore from './configureStore.prod';
 
-const storeEnhancers = compose(
-    (window && window.devToolsExtension) ? window.devToolsExtension() : (f) => f
-);
+// 根据环境获取对应的store
+const configureStore = process.env.local
+    ? devConfigureStore
+    : prodConfigureStore;
 
-const initialState = {};
-
-export default createStore(rootReducers, initialState, storeEnhancers);
+export default configureStore;

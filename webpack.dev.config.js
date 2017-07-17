@@ -10,7 +10,8 @@ const devConfig = merge(baseConfig, {
     devtool: 'eval-source-map',
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.API_ENV': '"development"'
+            'process.env.NODE_ENV': '"development"',
+            'process.env.local': 'true',
         }),
         new HtmlwebpackPlugin({
             title: 'react-webpack-demo',
