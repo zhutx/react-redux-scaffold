@@ -15,7 +15,7 @@ const testConfig = merge(baseConfig, {
             sourceMap: true,
         }),
         new HtmlwebpackPlugin({
-            title: 'react-webpack-demo',
+            title: 'react-redux-scaffold',
             filename: 'index.html',
             template: path.resolve(SRC_PATH, 'templates', 'index.html'),
             minify: {
